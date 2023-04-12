@@ -28,8 +28,8 @@ services:
       - 8012:3306
     volumes:
       - ./_db-docker-dev_/data:/var/lib/mysql
-      - ./_db-docker-dev_/logs:/var/log/mysql
-      - ./_db-docker-dev_/conf:/etc/mysql
+      # - ./_db-docker-dev_/logs:/var/log/mysql
+      # - ./_db-docker-dev_/conf:/etc/mysql
     restart: always
     networks:
       - bridge
