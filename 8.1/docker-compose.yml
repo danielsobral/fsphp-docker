@@ -1,0 +1,55 @@
+version: "3.9"
+services:
+  app:
+    #build: .docker/php/8.1
+    container_name: "srv-php8.1"
+    image: danielsobralnascimento/webserver:1.0
+    volumes:
+      - ./public_html/:/var/www/html
+      - ./personal.ini:/usr/local/etc/php/conf.d/personal.ini
+      - ./.docker/apache/lvh.me.crt:/etc/ssl/certs/lvh.me.crt
+      - ./.docker/apache/lvh.me.key:/etc/ssl/private/lvh.me.key
+      - ./.docker/apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
+      - ./.docker/apache/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
+    ports:
+      - 8010:80
+      - 8011:443
+    restart: always
+    networks:
+      - bridge
+  
+  mariadb:
+    container_name: srv-mariadb-php8.1
+    image: mariadb:latest
+    environment:
+      MYSQL_USER: root
+      MYSQL_ALLOW_EMPTY_PASSWORD: yes
+    ports:
+      - 8012:3306
+    volumes:
+      - ./_db-docker-dev_/data:/var/lib/mysql
+      - ./_db-docker-dev_/logs:/var/log/mysql
+      - ./_db-docker-dev_/conf:/etc/mysql
+    restart: always
+    networks:
+      - bridge
+
+  phpmyadmin:
+    container_name: srv-phpmyadmin-php8.1
+    image: phpmyadmin:latest
+    ports:
+      - 8013:80
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mariadb
+      - PMA_USER=root
+      - UPLOAD_LIMIT=300M
+    links:
+      - mariadb
+    restart: always
+    networks:
+      - bridge
+
+networks:
+  bridge:
+    driver: bridge
