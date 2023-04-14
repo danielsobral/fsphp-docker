@@ -43,7 +43,7 @@ em seguida execute o script com o comando
 ```bash
 ./update_php.sh
 ```
-pronto seu docker já estará pronto.
+pronto seu docker já estará pronto para uso.
 
 ## Dicas de uso
 
