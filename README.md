@@ -17,7 +17,7 @@ Este projeto é um LAMP (Linux, Apache, MariaDB e PHP) feito em Docker com image
 
 ## Instalação
 
-Faça o download do projeto em seguida acesse a pasta desejada, o nome de cada pasta corresponde a versão do PHP (7.4 = PHP 7.4) e digite os comandos a seguir.
+Após instalar o docker (https://www.docker.com/products/docker-desktop/) faça o download do projeto e em seguida acesse a pasta desejada, o nome de cada pasta corresponde a versão do PHP (7.4 = PHP 7.4) e digite os comandos a seguir.
 
 ```bash
 docker build . -t php/lamp74:1.0
