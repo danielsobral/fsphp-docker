@@ -1,6 +1,6 @@
 # Docker - LAMP
 
-Este projeto é um LAMP (Linux, Apache, MariaDB e PHP) feito em Docker com imagens oficiais do dockerhub.
+Este projeto é um LAMP (Linux, Apache, MariaDB e PHP) feito em Docker com imagens oficiais do dockerhub (https://hub.docker.com/).
 
 ### Conteúdos disponíveis neste projeto:
 - Ubunutu 22.04 LTS
@@ -17,23 +17,23 @@ Este projeto é um LAMP (Linux, Apache, MariaDB e PHP) feito em Docker com image
 
 ## Instalação
 
-Faça o download do projeto em seguida acesse a pasta desejada, o nome de cada pasta corresponde a versão do PHP (7.4 = PHP 7.4) e digite os comandos a seguir (https://pip.pypa.io/en/stable/).
+Faça o download do projeto em seguida acesse a pasta desejada, o nome de cada pasta corresponde a versão do PHP (7.4 = PHP 7.4) e digite os comandos a seguir.
 
 ```bash
 docker build . -t php/lamp74:1.0
 ```
-note que se caso você tenha escolhido a pasta 8.2 o comando seria este
+note que se caso você tivesse escolhido a pasta 8.2 o comando seria este
 
 ```bash
 docker build . -t php/lamp82:1.0
 ```
-após selecionar a pasta que deseja e executar o comando correspondente a versão escolhida digite este segundo comando
+após selecionar a pasta que deseja e executar o comando correspondente a versão escolhida, digite este segundo comando
 
 ```bash
 docker compose up -d
 ```
 
-Após este procedimento acesse o container contendo o nome lamp+versão (lamp74) acesse o terminal dele e de permissão de execução ao script update_php.sh, este script vai colocar a versão do PHP escolhida como default no Ubuntu, então dentro do container lamp digite o comando
+Após este procedimento acesse o container contendo o nome lamp+versão (lamp74), acesse o terminal dele e de permissão de execução ao script update_php.sh, este script vai colocar a versão do PHP escolhida como default no Ubuntu então dentro do container lamp digite o comando
 
 ```bash
 chmod +x update_php.sh
