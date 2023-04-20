@@ -43,7 +43,10 @@ em seguida execute o script com o comando
 ```bash
 ./update_php.sh
 ```
-pronto seu docker já estará pronto para uso.
+pronto seu docker já estará pronto para uso, para acessar o seu projeto clique nos links abaixo:
+ - (localhost http) http://localhost:8010/
+ - (localhost https) https://localhost:8011/
+ - (phpMyAdmin) http://localhost:8013/
 
 ## Dicas de uso
 
