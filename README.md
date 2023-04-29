@@ -57,6 +57,19 @@ pronto seu docker já estará pronto para uso, para acessar o seu projeto clique
 ```bash
 docker container exec lamp74 sh -c 'cd pasta/do/projeto && composer update'
 ```
+
+- Para acessar o terminal do seu container digite o comando abaixo:
+
+```bash
+docker container exec -it lamp74 bash
+```
+
+Para sair do terminal basta digitar o comando a seguir:
+
+```bash
+exit
+```
+
 ## Contribuindo
 
 Solicitações pull são bem-vindas. Para mudanças importantes, abra um problema primeiro
