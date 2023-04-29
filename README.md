@@ -33,15 +33,15 @@ após selecionar a pasta que deseja e executar o comando correspondente a versã
 docker compose up -d
 ```
 
-Após este procedimento acesse o container contendo o nome lamp+versão (lamp74), acesse o terminal dele e de permissão de execução ao script update_php.sh, este script vai colocar a versão do PHP escolhida como default no Ubuntu então dentro do container lamp digite o comando
+Após este procedimento de permissão de execução ao script update_php.sh que esta no container contendo o nome lamp+versão exemplo (lamp74), este script vai colocar a versão do PHP escolhida como default no Ubuntu, digite o comando abaixo:
 
 ```bash
-chmod +x update_php.sh
+docker container exec lamp74 chmod +x update_php.sh
 ```
 em seguida execute o script com o comando
 
 ```bash
-./update_php.sh
+docker container exec lamp74 ./update_php.sh
 ```
 pronto seu docker já estará pronto para uso, para acessar o seu projeto clique nos links abaixo:
  - (localhost http) http://localhost:8010/
