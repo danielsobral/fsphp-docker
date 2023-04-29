@@ -64,7 +64,7 @@ docker container exec lamp74 sh -c 'cd pasta/do/projeto && composer update'
 docker container exec -it lamp74 bash
 ```
 
-Para sair do terminal basta digitar o comando a seguir:
+- Para sair do terminal basta digitar o comando a seguir:
 
 ```bash
 exit
