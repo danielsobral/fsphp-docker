@@ -52,7 +52,11 @@ pronto seu docker já estará pronto para uso, para acessar o seu projeto clique
 
 - Para colocar o seu projeto PHP dentro do container por favor acesse a pasta com a versão do PHP escolhida e em seguida cole o seu projeto dentro da pasta public_html.
 - O backup do seu banco de dados ficara salvo na pasta _db-docker-dev_/data, você poderá trocar a versão do seu container tranquilamente sem se preocupar em perder seu banco pois todas as vezes que seu container subir o banco automaticamente vai ler a pasta e vai dar continuidade exatamente de onde você parou.
+- Para executar o composer no seu projeto PHP utilize o comando a seguir dentro da pasta onde se encontra o seu arquivo composer.json
 
+```bash
+docker container exec lamp74 sh -c 'cd pasta/do/projeto && composer update'
+```
 ## Contribuindo
 
 Solicitações pull são bem-vindas. Para mudanças importantes, abra um problema primeiro
