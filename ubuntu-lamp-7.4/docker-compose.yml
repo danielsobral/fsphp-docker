@@ -2,8 +2,8 @@ version: "3.9"
 services:
   app:
     #build: .docker/php/8.1
-    container_name: "lamp74"
-    image: php/lamp74:1.0
+    container_name: "ubuntu-lamp74"
+    image: php/ubuntu-lamp74:1.0
     volumes:
       - ./public_html/:/var/www/html
       - ./personal.ini:/usr/local/etc/php/conf.d/personal.ini

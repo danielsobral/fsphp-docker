@@ -2,8 +2,8 @@ version: "3.9"
 services:
   app:
     #build: .docker/php/8.1
-    container_name: "lamp56"
-    image: php/lamp56:1.0
+    container_name: "ubuntu-lamp56"
+    image: php/ubuntu-lamp56:1.0
     volumes:
       - ./public_html/:/var/www/html
       - ./personal.ini:/usr/local/etc/php/conf.d/personal.ini
@@ -12,7 +12,7 @@ services:
       - ./.docker/apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
       - ./.docker/apache/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
     ports:
-      - 80510:80
+      - 8050:80
       - 8051:443
     restart: always
     networks:

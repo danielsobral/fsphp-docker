@@ -17,15 +17,15 @@ Este projeto é um LAMP (Linux, Apache, MariaDB e PHP) feito em Docker com image
 
 ## Instalação
 
-Após instalar o docker (https://www.docker.com/products/docker-desktop/) faça o download do projeto e em seguida acesse a pasta desejada, o nome de cada pasta corresponde a versão do PHP (7.4 = PHP 7.4) e digite os comandos a seguir.
+Após instalar o docker (https://www.docker.com/products/docker-desktop/) faça o download do projeto e em seguida acesse a pasta desejada, o nome de cada pasta corresponde a versão do PHP (ubuntu-lamp-7.4 = PHP 7.4) e digite os comandos a seguir.
 
 ```bash
-docker build . -t php/lamp74:1.0
+docker build . -t php/ubuntu-lamp74:1.0
 ```
 note que se caso você tivesse escolhido a pasta 8.2 o comando seria este
 
 ```bash
-docker build . -t php/lamp82:1.0
+docker build . -t php/ubuntu-lamp82:1.0
 ```
 após selecionar a pasta que deseja e executar o comando correspondente a versão escolhida, digite este segundo comando
 
@@ -36,12 +36,12 @@ docker compose up -d
 Após este procedimento de permissão de execução ao script update_php.sh que esta no container contendo o nome lamp+versão exemplo (lamp74), este script vai colocar a versão do PHP escolhida como default no Ubuntu, digite o comando abaixo:
 
 ```bash
-docker container exec lamp74 chmod +x update_php.sh
+docker container exec ubuntu-lamp74 chmod +x update_php.sh
 ```
 em seguida execute o script com o comando
 
 ```bash
-docker container exec lamp74 ./update_php.sh
+docker container exec ubuntu-lamp74 ./update_php.sh
 ```
 pronto seu docker já estará pronto para uso, para acessar o seu projeto clique nos links abaixo:
  - Caso seja a versão 5.6
@@ -64,13 +64,13 @@ pronto seu docker já estará pronto para uso, para acessar o seu projeto clique
 - Para executar o composer no seu projeto PHP utilize o comando a seguir dentro da pasta onde se encontra o seu arquivo composer.json
 
 ```bash
-docker container exec lamp74 sh -c 'cd pasta/do/projeto && composer update'
+docker container exec ubuntu-lamp74 sh -c 'cd pasta/do/projeto && composer update'
 ```
 
 - Para acessar o terminal do seu container digite o comando abaixo:
 
 ```bash
-docker container exec -it lamp74 bash
+docker container exec -it ubuntu-lamp74 bash
 ```
 
 - Para sair do terminal basta digitar o comando a seguir:
