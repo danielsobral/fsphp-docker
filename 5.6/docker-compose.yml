@@ -2,7 +2,7 @@ version: "3.9"
 services:
   app:
     #build: .docker/php/8.1
-    container_name: "srv-php5.6"
+    container_name: "lamp56"
     image: php/lamp56:1.0
     volumes:
       - ./public_html/:/var/www/html
@@ -12,8 +12,8 @@ services:
       - ./.docker/apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
       - ./.docker/apache/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
     ports:
-      - 8010:80
-      - 8011:443
+      - 80510:80
+      - 8051:443
     restart: always
     networks:
       - bridge
@@ -25,7 +25,7 @@ services:
       MYSQL_USER: root
       MYSQL_ALLOW_EMPTY_PASSWORD: yes
     ports:
-      - 8012:3306
+      - 8052:3306
     volumes:
       - ./_db-docker-dev_/data:/var/lib/mysql
       # - ./_db-docker-dev_/logs:/var/log/mysql
@@ -38,7 +38,7 @@ services:
     container_name: phpmyadmin56
     image: phpmyadmin:latest
     ports:
-      - 8013:80
+      - 8053:80
     environment:
       - PMA_ARBITRARY=1
       - PMA_HOST=mariadb
