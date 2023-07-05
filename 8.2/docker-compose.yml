@@ -12,8 +12,8 @@ services:
       - ./.docker/apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
       - ./.docker/apache/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
     ports:
-      - 8010:80
-      - 8011:443
+      - 8040:80
+      - 8041:443
     restart: always
     networks:
       - bridge
@@ -25,7 +25,7 @@ services:
       MYSQL_USER: root
       MYSQL_ALLOW_EMPTY_PASSWORD: yes
     ports:
-      - 8012:3306
+      - 8042:3306
     volumes:
       - ./_db-docker-dev_/data:/var/lib/mysql
       # - ./_db-docker-dev_/logs:/var/log/mysql
@@ -38,7 +38,7 @@ services:
     container_name: phpmyadmin82
     image: phpmyadmin:latest
     ports:
-      - 8013:80
+      - 8043:80
     environment:
       - PMA_ARBITRARY=1
       - PMA_HOST=mariadb
