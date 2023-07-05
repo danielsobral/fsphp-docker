@@ -1,0 +1,1 @@
+Este arquivo tem como objetivo apenas garantir que a pasta _db-docker-dev_ seja enviada para o github, assim que você finalizar todo o processo de criação do container fique a vontade para apagar este readme.txt
