@@ -44,9 +44,20 @@ em seguida execute o script com o comando
 docker container exec lamp74 ./update_php.sh
 ```
 pronto seu docker já estará pronto para uso, para acessar o seu projeto clique nos links abaixo:
- - (localhost http) http://localhost:8010/
- - (localhost https) https://localhost:8011/
- - (phpMyAdmin) http://localhost:8013/
+ - Caso seja a versão 5.6
+  - (localhost http) http://localhost:8050/
+  - (localhost https) https://localhost:8051/
+  - (phpMyAdmin) http://localhost:8053/
+    
+ - Caso seja a versão 7.4
+  - (localhost http) http://localhost:8070/
+  - (localhost https) https://localhost:8071/
+  - (phpMyAdmin) http://localhost:8073/
+    
+ - Caso seja a versão 8.2
+  - (localhost http) http://localhost:8040/
+  - (localhost https) https://localhost:8041/
+  - (phpMyAdmin) http://localhost:8043/
 
 ## Dicas de uso
 
