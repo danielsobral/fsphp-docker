@@ -14,7 +14,7 @@ services:
     ports:
       - 8070:80
       - 8071:443
-    restart: always
+    restart: no
     networks:
       - bridge
   
@@ -30,7 +30,7 @@ services:
       - ./_db-docker-dev_/data:/var/lib/mysql
       # - ./_db-docker-dev_/logs:/var/log/mysql
       # - ./_db-docker-dev_/conf:/etc/mysql
-    restart: always
+    restart: no
     networks:
       - bridge
 
@@ -46,7 +46,7 @@ services:
       - UPLOAD_LIMIT=300M
     links:
       - mariadb
-    restart: always
+    restart: no
     networks:
       - bridge
 
